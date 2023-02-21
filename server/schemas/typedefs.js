@@ -43,6 +43,7 @@ type Auth {
         addUser(username: String, email: String, password: String): Auth
         addBook(bookData: BookInput): User
         removeBook(bookId: ID): User
+    }
 `;
 
 module.exports = typeDefs;
