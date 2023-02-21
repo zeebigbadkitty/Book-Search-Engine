@@ -44,3 +44,5 @@ type Auth {
         addBook(bookData: BookInput): User
         removeBook(bookId: ID): User
 `;
+
+module.exports = typeDefs;
