@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 // * `LOGIN_USER` will execute the `loginUser` mutation set up using Apollo Server.
 
@@ -23,7 +23,6 @@ export const LOGIN_USER = gql`
           image
           link
           title
-
         }
       }
     }
@@ -45,14 +44,44 @@ export const ADD_USER = gql`
           image
           link
           title
-
         }
       }
     }
   }
-  `;
+`;
 
 export const SAVE_BOOK = gql`
+  mutation saveBook($bookData: BookInput!) {
+    saveBook(bookData: $bookData) {
+      _id
+      username
+      email
+      savedBooks {
+        bookId
+        authors
+        description
+        image
+        link
+        title
+      }
+    }
+  }
 `;
+
 export const REMOVE_BOOK = gql`
+  mutation removeBook($bookId: ID!) {
+    removeBook(bookId: $bookId) {
+      _id
+      username
+      email
+      savedBooks {
+        bookId
+        authors
+        description
+        image
+        link
+        title
+      }
+    }
+  }
 `;
