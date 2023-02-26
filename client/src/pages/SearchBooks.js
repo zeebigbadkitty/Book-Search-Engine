@@ -14,6 +14,9 @@ import { saveBookIds, getSavedBookIds } from '../utils/localStorage';
 import {SAVE_BOOK} from '../utils/mutations';
 import { GET_ME } from '../utils/queries';
 
+const [saveBook] = useMutation(SAVE_BOOK);
+const [getMe] = useMutation(GET_ME);
+
 const SearchBooks = () => {
   // create state for holding returned google api data
   const [searchedBooks, setSearchedBooks] = useState([]);
